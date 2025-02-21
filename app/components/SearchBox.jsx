@@ -1,16 +1,17 @@
-import { Button, Grid, TextField } from "@mui/material";
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import Btn from "./Btn";
+import InputArea from "./InputArea";
 
 export default function SearchBox() {
   return (
-    <div>
-      <Grid container>
-        <Grid item>
-          <TextField />
-        </Grid>
-        <Grid item>
-          <Button>Search</Button>
-        </Grid>
-      </Grid>
+    <div className="flex m-10 gap-3">
+      <InputArea label="Search Recipe" />
+      <Btn
+        label="SEARCH"
+        icon={<SearchRoundedIcon />}
+        variant="contained"
+        color={"error"}
+      />
     </div>
   );
 }
