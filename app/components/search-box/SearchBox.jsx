@@ -1,10 +1,10 @@
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
-import Btn from "./Btn";
-import InputArea from "./InputArea";
+import Btn from "../Btn";
+import InputArea from "../InputArea";
 
 export default function SearchBox() {
   return (
-    <div className="flex m-10 gap-3">
+    <form className="flex gap-3 mb-[40px] mt-[40px]">
       <InputArea label="Search Recipe" />
       <Btn
         label="SEARCH"
@@ -12,6 +12,6 @@ export default function SearchBox() {
         variant="contained"
         color={"error"}
       />
-    </div>
+    </form>
   );
 }

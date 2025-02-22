@@ -1,9 +1,11 @@
+import { Box } from "@mui/material";
+
 export default function NotFoundPage() {
   return (
-    <div className="flex gap-5 justify-center mt-[300px] mb-[300px]">
-      <div>404</div>
-      <div className="border-l-2 border-black h-6"></div>
-      <div>Page Not Found</div>
-    </div>
+    <Box className="flex gap-5 justify-center mt-[300px] mb-[300px]">
+      <Box>404</Box>
+      <Box className="border-l-2 border-black h-6"></Box>
+      <Box>Page Not Found</Box>
+    </Box>
   );
 }

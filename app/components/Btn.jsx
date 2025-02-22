@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@mui/material";
 import DoneRoundedIcon from "@mui/icons-material/DoneRounded";
 
@@ -14,8 +16,7 @@ export default function Btn({
         onClick={onClick}
         startIcon={icon}
         variant={variant}
-        color={color}
-      >
+        color={color}>
         {label}
       </Button>
     </>

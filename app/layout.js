@@ -3,6 +3,8 @@ import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/public/recipeapp.png";
+import { Suspense } from "react";
+import { Box } from "@mui/material";
 
 const roboto = Roboto({
   weight: "400",
@@ -18,8 +20,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${roboto.className} antialiased`}>
-        <header className="bg-yellow-300 mb-5 sticky top-0">
-          <div className="pl-[200px] pr-[200px] flex justify-between pt-2 pb-2">
+        <header className="bg-yellow-300 mb-5 sticky top-0 z-50">
+          <Box className="pl-[200px] pr-[200px] flex justify-between pt-2 pb-2">
             <Link href={"/"}>
               <Image
                 src={logo}
@@ -36,27 +38,29 @@ export default function RootLayout({ children }) {
               <ul className="flex gap-9 pt-5 pb-5 font-medium">
                 <li>
                   <Link
-                    className="pt-2 pb-2 pl-3 pr-3 rounded-3xl hover:bg-yellow-400 active:bg-yellow-200"
+                    className="pt-2 pb-2 pl-3 pr-3 rounded-md hover:bg-yellow-400 active:bg-yellow-200"
                     href={"/"}>
                     Home
                   </Link>
                 </li>
                 <li>
                   <Link
-                    className="pt-2 pb-2 pl-3 pr-3 rounded-3xl hover:bg-yellow-400 active:bg-yellow-200"
+                    className="pt-2 pb-2 pl-3 pr-3 rounded-md hover:bg-yellow-400 active:bg-yellow-200"
                     href={"/about"}>
                     About
                   </Link>
                 </li>
               </ul>
             </nav>
-          </div>
+          </Box>
         </header>
-        <span>{children}</span>
-        <footer className="text-center mt-5">
-          <div className="text-sm">
+        <Box className="ml-[40px] mr-[40px]">
+          <Suspense>{children}</Suspense>
+        </Box>
+        <footer className="text-center mt-5 bg-yellow-300 pt-5 pb-5">
+          <Box className="text-sm">
             &copy; Mominul Haque 2025 - {new Date().getFullYear()}
-          </div>
+          </Box>
         </footer>
       </body>
     </html>
