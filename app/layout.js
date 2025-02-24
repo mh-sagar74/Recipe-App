@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${roboto.className} antialiased`}>
         <header className="bg-yellow-300 mb-5 sticky top-0 z-50">
-          <Box className="pl-[200px] pr-[200px] flex justify-between pt-2 pb-2">
+          <Box className="pl-[20px] pr-[20px] flex justify-between pt-2 pb-2">
             <Link href={"/"}>
               <Image
                 src={logo}
