@@ -5,6 +5,7 @@ import Image from "next/image";
 import Btn from "../Btn";
 import ReadMoreRoundedIcon from "@mui/icons-material/ReadMoreRounded";
 import { useEffect, useState } from "react";
+import Skeleton from "@mui/material/Skeleton";
 
 export default function FoodCard({ recipe }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,7 +16,14 @@ export default function FoodCard({ recipe }) {
   }, []);
 
   if (!isLoading) {
-    return <Box>Loading...</Box>;
+    return (
+      <Skeleton
+        variant="rectangular"
+        height={"460px"}
+        width={"350px"}
+        animation={"wave"}
+      />
+    );
   }
 
   return (
