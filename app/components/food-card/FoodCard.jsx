@@ -45,7 +45,7 @@ export default function FoodCard({ recipe }) {
       <Box className="m-4 flex flex-col text-left gap-3">
         <Typography>
           <span className="antialiased text-3xl font-semibold text-gray-800">
-            {name.length > 20 ? name.slice(0, 19) + "..." : name}
+            {name.length > 15 ? name.slice(0, 15) + "..." : name}
           </span>
         </Typography>
         <Typography className="bg-green-500 text-white w-fit pl-1 pr-1 rounded-md">
@@ -54,8 +54,8 @@ export default function FoodCard({ recipe }) {
         <Typography>
           <span className="text-green-500 font-semibold">Recipe : </span>
           <span>
-            {instructions[0].length > 30
-              ? instructions[0].slice(0, 30) + "..."
+            {instructions[0].length > 22
+              ? instructions[0].slice(0, 22) + "..."
               : instructions[0]}
           </span>
         </Typography>
