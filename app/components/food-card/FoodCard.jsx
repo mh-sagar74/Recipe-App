@@ -1,17 +1,39 @@
+"use client";
+
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Btn from "../Btn";
 import ReadMoreRoundedIcon from "@mui/icons-material/ReadMoreRounded";
+import { useEffect, useState } from "react";
 
-export default function FoodCard({ foodImage, foodName, tag, recipe }) {
+export default function FoodCard({ recipe }) {
+  const [isLoading, setIsLoading] = useState(false);
+  const { name, mealType, instructions, image } = recipe;
+
+  useEffect(() => {
+    setIsLoading(true);
+  }, []);
+
+  if (!isLoading) {
+    return <Box>Loading...</Box>;
+  }
+
   return (
     <Box className="h-[460px] w-[350px] border-[2px] border-stone-500 rounded-[4px] transition duration-300 ease-in-out hover:border-red-600 hover:scale-105">
       <Box
-        className={`bg-[url(@/public/beef.jpg)] bg-cover bg-center rounded-[4px]`}>
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRadius: "4px",
+        }}>
         <Image
-          src={foodImage}
-          alt={foodName}
+          src={image}
+          alt={"beef"}
           priority
+          width={0}
+          height={0}
+          unoptimized
           style={{
             width: "350px",
             height: "250px",
@@ -23,15 +45,19 @@ export default function FoodCard({ foodImage, foodName, tag, recipe }) {
       <Box className="m-4 flex flex-col text-left gap-3">
         <Typography>
           <span className="antialiased text-3xl font-semibold text-gray-800">
-            {foodName.substring(0, 18)}...
+            {name.length > 20 ? name.slice(0, 19) + "..." : name}
           </span>
         </Typography>
         <Typography className="bg-green-500 text-white w-fit pl-1 pr-1 rounded-md">
-          {tag}
+          {mealType}
         </Typography>
         <Typography>
           <span className="text-green-500 font-semibold">Recipe : </span>
-          <span>{recipe.substring(0, 25)}...</span>
+          <span>
+            {instructions[0].length > 30
+              ? instructions[0].slice(0, 30) + "..."
+              : instructions[0]}
+          </span>
         </Typography>
         <Btn
           color={"inherit"}
