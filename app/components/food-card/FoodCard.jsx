@@ -9,7 +9,7 @@ import Skeleton from "@mui/material/Skeleton";
 
 export default function FoodCard({ recipe }) {
   const [isLoading, setIsLoading] = useState(false);
-  const { name, difficulty, instructions, image } = recipe;
+  const { id, image, name, difficulty, instructions } = recipe;
 
   useEffect(() => {
     setIsLoading(true);
