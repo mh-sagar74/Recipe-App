@@ -54,7 +54,7 @@ export default function FoodCard({
           {difficulty}
         </Typography>
         <Typography>
-          <span className="text-green-500 font-semibold">Recipe : </span>
+          <span className="text-green-500 font-semibold">Instructions : </span>
           <span>
             {instructions[0].length > 22
               ? instructions[0].slice(0, 22) + "..."
