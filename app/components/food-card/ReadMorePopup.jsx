@@ -10,7 +10,7 @@ export default function ReadMorePopup({ setReadMore, selectedData }) {
       className={`fixed inset-0 z-50 backdrop-brightness-50 flex justify-center items-center`}>
       <Box className={`bg-white p-10 rounded-md`}>
         <Box className="flex gap-10">
-          <Box className="w-[450px]">
+          <Box className="w-[400px]">
             <Image
               src={image}
               alt={name}
@@ -28,7 +28,7 @@ export default function ReadMorePopup({ setReadMore, selectedData }) {
               </span>
             </Typography>
           </Box>
-          <Box className="w-[500px]">
+          <Box className="w-[400px]">
             <span>
               <span className="text-green-600 font-semibold">
                 Ingredients :{" "}
