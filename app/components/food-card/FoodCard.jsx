@@ -4,30 +4,24 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Btn from "../Btn";
 import ReadMoreRoundedIcon from "@mui/icons-material/ReadMoreRounded";
-import { useEffect, useState } from "react";
-import Skeleton from "@mui/material/Skeleton";
 
-export default function FoodCard({ recipe }) {
-  const [isLoading, setIsLoading] = useState(false);
+export default function FoodCard({
+  recipe,
+  setReadMore,
+  allData,
+  setSelectedData,
+}) {
   const { id, image, name, difficulty, instructions } = recipe;
 
-  useEffect(() => {
-    setIsLoading(true);
-  }, []);
-
-  if (!isLoading) {
-    return (
-      <Skeleton
-        variant="rectangular"
-        height={"460px"}
-        width={"350px"}
-        animation={"wave"}
-      />
-    );
-  }
+  const handleReadMoreBtn = (id) => {
+    const singleData = allData.find((data) => id === data.id);
+    console.log(singleData);
+    setSelectedData(singleData);
+    setReadMore(true);
+  };
 
   return (
-    <Box className="h-[460px] w-[350px] border-[2px] border-stone-500 rounded-[4px] transition duration-300 ease-in-out hover:border-red-600 hover:scale-105">
+    <Box className="mt-[40px] h-[460px] w-[350px] border-[2px] border-stone-500 rounded-[4px] transition duration-300 ease-in-out hover:border-red-600 hover:scale-105">
       <Box
         style={{
           backgroundImage: `url(${image})`,
@@ -71,6 +65,7 @@ export default function FoodCard({ recipe }) {
           color={"inherit"}
           label="READ MORE"
           icon={<ReadMoreRoundedIcon />}
+          onClick={() => handleReadMoreBtn(id)}
         />
       </Box>
     </Box>

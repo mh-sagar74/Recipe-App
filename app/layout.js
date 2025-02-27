@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
         <Box className="ml-[40px] mr-[40px]">
           <Suspense>{children}</Suspense>
         </Box>
-        <footer className="text-center mt-5 bg-yellow-300 pt-5 pb-5">
+        <footer className="text-center mt-10 bg-yellow-300 pt-5 pb-5">
           <Box className="text-sm">
             &copy; Mominul Haque 2025 - {new Date().getFullYear()}
           </Box>
