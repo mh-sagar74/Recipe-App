@@ -8,7 +8,7 @@ export default function page() {
         <span className="text-4xl font-semibold text-red-500">About</span>
       </Typography>
       <Box>
-        <Typography className="flex justify-between bg-gray-600 text-white p-3 rounded-sm">
+        <Typography className="flex justify-between bg-gray-700 text-white p-3 rounded-sm">
           <span className="text-2xl">Developer</span>
           <span className="text-2xl">
             <Link
